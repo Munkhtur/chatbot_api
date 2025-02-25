@@ -48,7 +48,6 @@ def get_org_chain(org_id, db:Session):
         raise ValueError(f"Organization with ID {org_id} not found")
 
     if org_id in retrievers:
-        print("incache")
         return retrievers[org_id]
 
     embeddings = HuggingFaceEmbeddings(model_name=org.embedding_model)

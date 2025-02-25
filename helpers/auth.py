@@ -5,6 +5,7 @@ import jwt
 
 
 def get_org_id(authorization: str = Header(None)):
+    
     if not authorization or not authorization.startswith("Bearer "):
         raise HTTPException(status_code=401, detail="Missing or invalid token")
     
